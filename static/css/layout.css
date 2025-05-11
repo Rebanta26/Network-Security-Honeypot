@@ -1,0 +1,57 @@
+/* Navbar Styling */
+.navbar {
+    background: linear-gradient(45deg, #333, #666);
+    border-radius: 0;
+    padding: 0.75rem 1rem;
+    box-shadow: none;
+  }
+  .navbar-brand {
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: #fff !important;
+    text-decoration: none;
+  }
+  .navbar-brand:hover {
+    text-decoration: underline;
+    color: #fff !important;
+  }
+  .navbar-nav .nav-link {
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    color: #fff !important;
+    text-decoration: none;
+    transition: text-decoration 0.2s ease;
+  }
+  .navbar-nav .nav-link:hover {
+    text-decoration: underline;
+    color: #fff !important;
+  }
+
+/* Navigation Bar with Grey-Black Gradient */
+.navbar {
+  background: linear-gradient(45deg, #333, #666);
+  border-radius: 0;
+  padding: 0.75rem 1rem;
+  box-shadow: none;
+}
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: #fff !important;
+  text-decoration: none;
+}
+.navbar-brand:hover {
+  text-decoration: underline;
+  color: #fff !important;
+}
+.navbar-nav .nav-link {
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  color: #fff !important;
+  text-decoration: none;
+  transition: text-decoration 0.2s ease;
+}
+.navbar-nav .nav-link:hover {
+  text-decoration: underline;
+  color: #fff !important;
+}

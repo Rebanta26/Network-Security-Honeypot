@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Up - FakeStore</title>
+
+  <!-- Bootstrap CSS -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+  />
+
+  <!-- Google Fonts: Montserrat -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Base resets & globals -->
+  <link rel="stylesheet" href="/static/css/base.css" />
+  <!-- Layout (grid, containers, navbar) -->
+  <link rel="stylesheet" href="/static/css/layout.css" />
+  <!-- Component styles -->
+  <link rel="stylesheet" href="/static/css/components/buttons.css" />
+  <!-- Page-specific overrides -->
+  <link rel="stylesheet" href="/static/css/pages/login.css" />
+
+  <script
+    type="module"
+    src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
+  ></script>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row full-height-row g-0">
+      <!-- Left Column: Sign Up Form -->
+      <div class="col-md-6 form-column">
+        <div class="form-container">
+          <h1 class="form-title">Start Your Journey</h1>
+          <p class="form-subtitle">Sign Up to FakeStore</p>
+          <form method="POST" action="/signup">
+            <label for="email" class="form-label">E-mail</label>
+            <input
+              type="email"
+              name="email"
+              class="form-control"
+              id="email"
+              placeholder="example@email.com"
+              required
+            />
+
+            <label for="password" class="form-label mt-3">Password</label>
+            <input
+              type="password"
+              name="password"
+              class="form-control"
+              id="password"
+              placeholder="******"
+              required
+            />
+
+            <!-- CAPTCHA Widget -->
+            <div class="d-flex align-items-center mt-4 mb-2">
+              <img
+                src="{{ url_for('serve_captcha') }}"
+                alt="CAPTCHA"
+                class="captcha-img border rounded me-2"
+              />
+              <button
+                id="refresh-captcha"
+                type="button"
+                class="btn btn-sm btn-outline-secondary"
+              >
+                Refresh
+              </button>
+            </div>
+            <label for="captcha" class="form-label">Enter the text shown above</label>
+            <input
+              type="text"
+              name="captcha"
+              class="form-control mb-3"
+              id="captcha"
+              placeholder="CAPTCHA text"
+              required
+            />
+
+            <button type="submit" class="btn btn-primary w-100 mt-3">
+              Sign Up
+            </button>
+          </form>
+
+          <div class="divider-text">or</div>
+
+          <div class="text-center mb-3">
+            <button class="btn btn-outline-primary me-2">Google</button>
+            <button class="btn btn-outline-secondary me-2">GitHub</button>
+            <button class="btn btn-outline-dark">Apple</button>
+          </div>
+
+          <div class="text-center mt-3">
+            <span>Have an account?</span>
+            <a href="/login" class="ms-1 signup-link">Sign In</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Lottie Animation -->
+      <div class="col-md-6 lottie-column d-none d-md-flex">
+        <dotlottie-player
+          src="https://lottie.host/44a469b2-55be-4490-aeb0-10de45df7b4f/Xvpdifam74.lottie"
+          background="transparent"
+          speed="1"
+          style="width:300px; height:300px;"
+          loop
+          autoplay
+        ></dotlottie-player>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+  ></script>
+
+  <!-- Captcha refresh logic -->
+  <script>
+    document.getElementById('refresh-captcha').addEventListener('click', () => {
+      const img = document.querySelector('.captcha-img');
+      // Jinja fills in the correct URL on the server
+      img.src = '{{ url_for("serve_captcha") }}?' + Date.now();
+    });
+  </script>
+</body>
+</html>
