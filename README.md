@@ -57,12 +57,11 @@ The honeypot will be available at http://127.0.0.1:5000/.
     3.	Simulate bot traffic
 
 python simulate_bot.py # Basic scraper simulation
-python advanced_bot.py # More evasive behavior
 
     4.	View logs
     •	Inspect the database tables (interactions, bot_flags) to analyze captured data.
     5.	Network analysis
-    •	Use Wireshark or scapy_capture.py to sniff and inspect packets against trap endpoints.
+    •	Use Wireshark Scapy to sniff and inspect packets against trap endpoints.
 
 Contributing
 
