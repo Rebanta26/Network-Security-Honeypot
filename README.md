@@ -73,5 +73,3 @@ License
 This project is licensed under the MIT License.
 
 ⸻
-
-For questions or issues, open an issue on GitHub or contact the maintainer.
