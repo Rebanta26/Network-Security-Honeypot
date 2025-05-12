@@ -61,7 +61,7 @@ python simulate_bot.py # Basic scraper simulation
     4.	View logs
     •	Inspect the database tables (interactions, bot_flags) to analyze captured data.
     5.	Network analysis
-    •	Use Wireshark Scapy to sniff and inspect packets against trap endpoints.
+    •	Use Wireshark or Scapy to sniff and inspect packets against trap endpoints.
 
 Contributing
 
